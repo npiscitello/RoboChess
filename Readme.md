@@ -16,3 +16,9 @@ dead reckoning; after receiving a command, the robot will calculate some path to
 command. As it traverses the path, it will estimate it's location on the map. The data from the
 cliff and optical bump sensors will be used to refine this estimation, ensuring any errors
 introduced from the dead reckoning don't become severe enough to impact operation.
+
+# Target
+This project will target an embedded Linux board (e.g. Raspberry Pi) for now but may switch
+platforms in the future. This choice of platform is to allow the control and chess engine to all run
+locally; using a microcontroller to connect back to a host running the chess engine and possibly
+navigational code may be more desirable in the future.
