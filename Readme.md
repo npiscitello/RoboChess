@@ -18,7 +18,13 @@ cliff and optical bump sensors will be used to refine this estimation, ensuring 
 introduced from the dead reckoning don't become severe enough to impact operation.
 
 # Target
-This project will target an embedded Linux board (e.g. Raspberry Pi) for now but may switch
+~~This project will target an embedded Linux board (e.g. Raspberry Pi) for now but may switch
 platforms in the future. This choice of platform is to allow the control and chess engine to all run
 locally; using a microcontroller to connect back to a host running the chess engine and possibly
-navigational code may be more desirable in the future.
+navigational code may be more desirable in the future.~~
+Per instructor requirement, this project will target an Altera DE-0 board. This may make running the
+chess engine locally impractical - we'll cross that bridge when we get to it. The UART interface for
+the Media Computer configuration seems to be hardwired to an RS232 chip on the board; we'll need to
+implement soft UART or just convert the RS232. I plan on leveraging the prebuilt UART interface; in
+addition to making the software simpler, it also allows the use of standard RS232/UART conversion
+equipment (instead of creating our own cables).

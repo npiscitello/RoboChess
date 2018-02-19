@@ -1,0 +1,1 @@
+rm *.elf *.srec
