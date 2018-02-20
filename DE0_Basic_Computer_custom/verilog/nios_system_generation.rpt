@@ -1,0 +1,239 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory=C:/altera/13.1/University_Program/Computer_Systems/DE0/DE0_Basic_Computer/verilog/ --output-directory=C:/Users/piscitellon/Documents/Spring2018/ELEC2850-02_microcontrollers_c/roomba/custom_image/ --report-file=bsf:C:/altera/13.1/University_Program/Computer_Systems/DE0/DE0_Basic_Computer/verilog/nios_system.bsf --system-info=DEVICE_FAMILY="Cyclone III" --system-info=DEVICE=EP3C16F484C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file=C:/altera/13.1/University_Program/Computer_Systems/DE0/DE0_Basic_Computer/verilog/nios_system.qsys
+Progress: Loading verilog/nios_system.qsys
+Progress: Reading input file
+Progress: Adding clk [clock_source 13.1]
+Progress: Parameterizing module clk
+Progress: Adding Onchip_memory [altera_avalon_onchip_memory2 13.1]
+Progress: Parameterizing module Onchip_memory
+Progress: Adding JTAG_UART [altera_avalon_jtag_uart 13.1]
+Progress: Parameterizing module JTAG_UART
+Progress: Adding Interval_timer [altera_avalon_timer 13.1]
+Progress: Parameterizing module Interval_timer
+Progress: Adding sdram [altera_avalon_new_sdram_controller 13.1]
+Progress: Parameterizing module sdram
+Progress: Adding Green_LEDs [altera_up_avalon_parallel_port 13.1]
+Progress: Parameterizing module Green_LEDs
+Progress: Adding HEX3_HEX0 [altera_up_avalon_parallel_port 13.1]
+Progress: Parameterizing module HEX3_HEX0
+Progress: Adding Slider_switches [altera_up_avalon_parallel_port 13.1]
+Progress: Parameterizing module Slider_switches
+Progress: Adding Pushbuttons [altera_up_avalon_parallel_port 13.1]
+Progress: Parameterizing module Pushbuttons
+Progress: Adding Expansion_JP1 [altera_up_avalon_parallel_port 13.1]
+Progress: Parameterizing module Expansion_JP1
+Progress: Adding Expansion_JP2 [altera_up_avalon_parallel_port 13.1]
+Progress: Parameterizing module Expansion_JP2
+Progress: Adding Serial_port [altera_up_avalon_rs232 13.1]
+Progress: Parameterizing module Serial_port
+Progress: Adding Onchip_memory_SRAM [altera_avalon_onchip_memory2 13.1]
+Progress: Parameterizing module Onchip_memory_SRAM
+Progress: Adding cpu [altera_nios2_qsys 13.1]
+Progress: Parameterizing module cpu
+Progress: Adding sysid [altera_avalon_sysid_qsys 13.1]
+Progress: Parameterizing module sysid
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: nios_system.cpu: CPUID control register value is 0. Please manually assign CPUID if creating multiple Nios II system
+Info: nios_system.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: nios_system.sysid: Time stamp will be automatically updated when this component is generated.
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory=C:/altera/13.1/University_Program/Computer_Systems/DE0/DE0_Basic_Computer/verilog/ --output-directory=C:/Users/piscitellon/Documents/Spring2018/ELEC2850-02_microcontrollers_c/roomba/custom_image/synthesis/ --file-set=QUARTUS_SYNTH --report-file=html:C:/altera/13.1/University_Program/Computer_Systems/DE0/DE0_Basic_Computer/verilog/nios_system.html --report-file=sopcinfo:C:/altera/13.1/University_Program/Computer_Systems/DE0/DE0_Basic_Computer/verilog/nios_system.sopcinfo --report-file=cmp:C:/altera/13.1/University_Program/Computer_Systems/DE0/DE0_Basic_Computer/verilog/nios_system.cmp --report-file=qip:C:/Users/piscitellon/Documents/Spring2018/ELEC2850-02_microcontrollers_c/roomba/custom_image/synthesis/nios_system.qip --report-file=svd --report-file=regmap:C:/Users/piscitellon/Documents/Spring2018/ELEC2850-02_microcontrollers_c/roomba/custom_image/synthesis/nios_system.regmap --report-file=debuginfo:C:/Users/piscitellon/Documents/Spring2018/ELEC2850-02_microcontrollers_c/roomba/custom_image/synthesis/nios_system.debuginfo --system-info=DEVICE_FAMILY="Cyclone III" --system-info=DEVICE=EP3C16F484C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file=C:/altera/13.1/University_Program/Computer_Systems/DE0/DE0_Basic_Computer/verilog/nios_system.qsys --language=VERILOG
+Progress: Loading verilog/nios_system.qsys
+Progress: Reading input file
+Progress: Adding clk [clock_source 13.1]
+Progress: Parameterizing module clk
+Progress: Adding Onchip_memory [altera_avalon_onchip_memory2 13.1]
+Progress: Parameterizing module Onchip_memory
+Progress: Adding JTAG_UART [altera_avalon_jtag_uart 13.1]
+Progress: Parameterizing module JTAG_UART
+Progress: Adding Interval_timer [altera_avalon_timer 13.1]
+Progress: Parameterizing module Interval_timer
+Progress: Adding sdram [altera_avalon_new_sdram_controller 13.1]
+Progress: Parameterizing module sdram
+Progress: Adding Green_LEDs [altera_up_avalon_parallel_port 13.1]
+Progress: Parameterizing module Green_LEDs
+Progress: Adding HEX3_HEX0 [altera_up_avalon_parallel_port 13.1]
+Progress: Parameterizing module HEX3_HEX0
+Progress: Adding Slider_switches [altera_up_avalon_parallel_port 13.1]
+Progress: Parameterizing module Slider_switches
+Progress: Adding Pushbuttons [altera_up_avalon_parallel_port 13.1]
+Progress: Parameterizing module Pushbuttons
+Progress: Adding Expansion_JP1 [altera_up_avalon_parallel_port 13.1]
+Progress: Parameterizing module Expansion_JP1
+Progress: Adding Expansion_JP2 [altera_up_avalon_parallel_port 13.1]
+Progress: Parameterizing module Expansion_JP2
+Progress: Adding Serial_port [altera_up_avalon_rs232 13.1]
+Progress: Parameterizing module Serial_port
+Progress: Adding Onchip_memory_SRAM [altera_avalon_onchip_memory2 13.1]
+Progress: Parameterizing module Onchip_memory_SRAM
+Progress: Adding cpu [altera_nios2_qsys 13.1]
+Progress: Parameterizing module cpu
+Progress: Adding sysid [altera_avalon_sysid_qsys 13.1]
+Progress: Parameterizing module sysid
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: nios_system.cpu: CPUID control register value is 0. Please manually assign CPUID if creating multiple Nios II system
+Info: nios_system.sysid: System ID is not assigned automatically. Edit the System ID parameter to provide a unique ID
+Info: nios_system.sysid: Time stamp will be automatically updated when this component is generated.
+Info: nios_system: Generating nios_system "nios_system" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 15 modules, 72 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_initial_interconnect_transform: After transform: 15 modules, 66 connections
+Info: merlin_translator_transform: After transform: 33 modules, 138 connections
+Info: merlin_domain_transform: After transform: 69 modules, 382 connections
+Info: merlin_router_transform: After transform: 87 modules, 454 connections
+Info: merlin_burst_transform: After transform: 88 modules, 458 connections
+Info: merlin_network_to_switch_transform: After transform: 123 modules, 548 connections
+Info: merlin_width_transform: After transform: 125 modules, 556 connections
+Info: merlin_clock_and_reset_bridge_transform: After transform: 127 modules, 684 connections
+Info: merlin_hierarchy_transform: After transform: 16 modules, 75 connections
+Info: merlin_mm_transform: After transform: 16 modules, 75 connections
+Info: merlin_interrupt_mapper_transform: After transform: 17 modules, 79 connections
+Info: reset_adaptation_transform: After transform: 19 modules, 78 connections
+Info: Onchip_memory: Starting RTL generation for module 'nios_system_Onchip_memory'
+Info: Onchip_memory:   Generation command is [exec C:/altera/13.1/quartus/bin/perl/bin/perl.exe -I C:/altera/13.1/quartus/bin/perl/lib -I C:/altera/13.1/quartus/sopc_builder/bin/europa -I C:/altera/13.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.1/quartus/sopc_builder/bin -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=nios_system_Onchip_memory --dir=C:/Users/PISCIT~1/AppData/Local/Temp/alt7582_398247118503940063.dir/0001_Onchip_memory_gen/ --quartus_dir=C:/altera/13.1/quartus --verilog --config=C:/Users/PISCIT~1/AppData/Local/Temp/alt7582_398247118503940063.dir/0001_Onchip_memory_gen//nios_system_Onchip_memory_component_configuration.pl  --do_build_sim=0  ]
+Info: Onchip_memory: Done RTL generation for module 'nios_system_Onchip_memory'
+Info: Onchip_memory: "nios_system" instantiated altera_avalon_onchip_memory2 "Onchip_memory"
+Info: JTAG_UART: Starting RTL generation for module 'nios_system_JTAG_UART'
+Info: JTAG_UART:   Generation command is [exec C:/altera/13.1/quartus/bin/perl/bin/perl.exe -I C:/altera/13.1/quartus/bin/perl/lib -I C:/altera/13.1/quartus/sopc_builder/bin/europa -I C:/altera/13.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.1/quartus/sopc_builder/bin -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=nios_system_JTAG_UART --dir=C:/Users/PISCIT~1/AppData/Local/Temp/alt7582_398247118503940063.dir/0002_JTAG_UART_gen/ --quartus_dir=C:/altera/13.1/quartus --verilog --config=C:/Users/PISCIT~1/AppData/Local/Temp/alt7582_398247118503940063.dir/0002_JTAG_UART_gen//nios_system_JTAG_UART_component_configuration.pl  --do_build_sim=0  ]
+Info: JTAG_UART: Done RTL generation for module 'nios_system_JTAG_UART'
+Info: JTAG_UART: "nios_system" instantiated altera_avalon_jtag_uart "JTAG_UART"
+Info: Interval_timer: Starting RTL generation for module 'nios_system_Interval_timer'
+Info: Interval_timer:   Generation command is [exec C:/altera/13.1/quartus/bin//perl/bin/perl.exe -I C:/altera/13.1/quartus/bin//perl/lib -I C:/altera/13.1/quartus/sopc_builder/bin/europa -I C:/altera/13.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.1/quartus/sopc_builder/bin -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=nios_system_Interval_timer --dir=C:/Users/PISCIT~1/AppData/Local/Temp/alt7582_398247118503940063.dir/0003_Interval_timer_gen/ --quartus_dir=C:/altera/13.1/quartus --verilog --config=C:/Users/PISCIT~1/AppData/Local/Temp/alt7582_398247118503940063.dir/0003_Interval_timer_gen//nios_system_Interval_timer_component_configuration.pl  --do_build_sim=0  ]
+Info: Interval_timer: Done RTL generation for module 'nios_system_Interval_timer'
+Info: Interval_timer: "nios_system" instantiated altera_avalon_timer "Interval_timer"
+Info: sdram: Starting RTL generation for module 'nios_system_sdram'
+Info: sdram:   Generation command is [exec C:/altera/13.1/quartus/bin/perl/bin/perl.exe -I C:/altera/13.1/quartus/bin/perl/lib -I C:/altera/13.1/quartus/sopc_builder/bin/europa -I C:/altera/13.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.1/quartus/sopc_builder/bin -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=nios_system_sdram --dir=C:/Users/PISCIT~1/AppData/Local/Temp/alt7582_398247118503940063.dir/0004_sdram_gen/ --quartus_dir=C:/altera/13.1/quartus --verilog --config=C:/Users/PISCIT~1/AppData/Local/Temp/alt7582_398247118503940063.dir/0004_sdram_gen//nios_system_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram: Done RTL generation for module 'nios_system_sdram'
+Info: sdram: "nios_system" instantiated altera_avalon_new_sdram_controller "sdram"
+Info: Green_LEDs: Starting Generation of Parallel Port
+Info: Green_LEDs: "nios_system" instantiated altera_up_avalon_parallel_port "Green_LEDs"
+Info: HEX3_HEX0: Starting Generation of Parallel Port
+Info: HEX3_HEX0: "nios_system" instantiated altera_up_avalon_parallel_port "HEX3_HEX0"
+Info: Slider_switches: Starting Generation of Parallel Port
+Info: Slider_switches: "nios_system" instantiated altera_up_avalon_parallel_port "Slider_switches"
+Info: Pushbuttons: Starting Generation of Parallel Port
+Info: Pushbuttons: "nios_system" instantiated altera_up_avalon_parallel_port "Pushbuttons"
+Info: Expansion_JP1: Starting Generation of Parallel Port
+Info: Expansion_JP1: "nios_system" instantiated altera_up_avalon_parallel_port "Expansion_JP1"
+Info: Expansion_JP2: Starting Generation of Parallel Port
+Info: Expansion_JP2: "nios_system" instantiated altera_up_avalon_parallel_port "Expansion_JP2"
+Info: Serial_port: Starting Generation of RS232 UART
+Info: Serial_port: "nios_system" instantiated altera_up_avalon_rs232 "Serial_port"
+Info: Onchip_memory_SRAM: Starting RTL generation for module 'nios_system_Onchip_memory_SRAM'
+Info: Onchip_memory_SRAM:   Generation command is [exec C:/altera/13.1/quartus/bin/perl/bin/perl.exe -I C:/altera/13.1/quartus/bin/perl/lib -I C:/altera/13.1/quartus/sopc_builder/bin/europa -I C:/altera/13.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.1/quartus/sopc_builder/bin -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/altera/13.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=nios_system_Onchip_memory_SRAM --dir=C:/Users/PISCIT~1/AppData/Local/Temp/alt7582_398247118503940063.dir/0012_Onchip_memory_SRAM_gen/ --quartus_dir=C:/altera/13.1/quartus --verilog --config=C:/Users/PISCIT~1/AppData/Local/Temp/alt7582_398247118503940063.dir/0012_Onchip_memory_SRAM_gen//nios_system_Onchip_memory_SRAM_component_configuration.pl  --do_build_sim=0  ]
+Info: Onchip_memory_SRAM: Done RTL generation for module 'nios_system_Onchip_memory_SRAM'
+Info: Onchip_memory_SRAM: "nios_system" instantiated altera_avalon_onchip_memory2 "Onchip_memory_SRAM"
+Info: cpu: Starting RTL generation for module 'nios_system_cpu'
+Info: cpu:   Generation command is [exec C:/altera/13.1/quartus/bin/eperlcmd.exe -I C:/altera/13.1/quartus/bin/perl/lib -I C:/altera/13.1/quartus/sopc_builder/bin/europa -I C:/altera/13.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/13.1/quartus/sopc_builder/bin -I C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/altera/13.1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=nios_system_cpu --dir=C:/Users/PISCIT~1/AppData/Local/Temp/alt7582_398247118503940063.dir/0013_cpu_gen/ --quartus_dir=C:/altera/13.1/quartus --verilog --config=C:/Users/PISCIT~1/AppData/Local/Temp/alt7582_398247118503940063.dir/0013_cpu_gen//nios_system_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2018.02.19 19:26:25 (*) Starting Nios II generation
+Info: cpu: # 2018.02.19 19:26:25 (*)   Checking for plaintext license.
+Info: cpu: # 2018.02.19 19:26:26 (*)   Couldn't query license setup in Quartus directory C:/altera/13.1/quartus
+Info: cpu: # 2018.02.19 19:26:26 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2018.02.19 19:26:26 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2018.02.19 19:26:26 (*)   Plaintext license not found.
+Info: cpu: # 2018.02.19 19:26:26 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2018.02.19 19:26:26 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2018.02.19 19:26:26 (*)   Creating all objects for CPU
+Info: cpu: # 2018.02.19 19:26:28 (*)   Generating RTL from CPU objects
+Info: cpu: # 2018.02.19 19:26:28 (*)   Creating plain-text RTL
+Info: cpu: # 2018.02.19 19:26:29 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'nios_system_cpu'
+Info: cpu: "nios_system" instantiated altera_nios2_qsys "cpu"
+Info: sysid: "nios_system" instantiated altera_avalon_sysid_qsys "sysid"
+Info: pipeline_bridge_swap_transform: After transform: 112 modules, 381 connections
+Info: No custom instruction connections, skipping transform 
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: merlin_initial_interconnect_transform: After transform: 0 modules, 0 connections
+Info: No Avalon connections, skipping transform 
+Info: merlin_hierarchy_transform: After transform: 112 modules, 381 connections
+Info: mm_interconnect_0: "nios_system" instantiated altera_merlin_interconnect_wrapper "mm_interconnect_0"
+Info: irq_mapper: "nios_system" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "nios_system" instantiated altera_reset_controller "rst_controller"
+Info: cpu_instruction_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "cpu_instruction_master_translator"
+Info: cpu_jtag_debug_module_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "cpu_jtag_debug_module_translator"
+Info: cpu_instruction_master_translator_avalon_universal_master_0_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "cpu_instruction_master_translator_avalon_universal_master_0_agent"
+Info: cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent"
+Info: cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "cpu_jtag_debug_module_translator_avalon_universal_slave_0_agent_rsp_fifo"
+Info: addr_router: "mm_interconnect_0" instantiated altera_merlin_router "addr_router"
+Info: addr_router_001: "mm_interconnect_0" instantiated altera_merlin_router "addr_router_001"
+Info: id_router: "mm_interconnect_0" instantiated altera_merlin_router "id_router"
+Info: id_router_001: "mm_interconnect_0" instantiated altera_merlin_router "id_router_001"
+Info: id_router_002: "mm_interconnect_0" instantiated altera_merlin_router "id_router_002"
+Info: id_router_004: "mm_interconnect_0" instantiated altera_merlin_router "id_router_004"
+Info: burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "burst_adapter"
+Info: cmd_xbar_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_xbar_demux"
+Info: cmd_xbar_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_xbar_demux_001"
+Info: cmd_xbar_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_xbar_mux"
+Info: cmd_xbar_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_xbar_mux_001"
+Info: Reusing file C:/Users/piscitellon/Documents/Spring2018/ELEC2850-02_microcontrollers_c/roomba/custom_image/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_xbar_demux"
+Info: rsp_xbar_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_xbar_demux_001"
+Info: rsp_xbar_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_xbar_mux"
+Info: Reusing file C:/Users/piscitellon/Documents/Spring2018/ELEC2850-02_microcontrollers_c/roomba/custom_image/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_xbar_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_xbar_mux_001"
+Info: Reusing file C:/Users/piscitellon/Documents/Spring2018/ELEC2850-02_microcontrollers_c/roomba/custom_image/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "width_adapter"
+Info: Reusing file C:/Users/piscitellon/Documents/Spring2018/ELEC2850-02_microcontrollers_c/roomba/custom_image/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/piscitellon/Documents/Spring2018/ELEC2850-02_microcontrollers_c/roomba/custom_image/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: nios_system: Done "nios_system" with 39 modules, 60 files, 1668566 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
