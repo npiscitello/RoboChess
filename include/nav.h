@@ -8,7 +8,4 @@ struct location {
 };
 typedef struct location location_t;
 
-// test function - just prints out the values of the macros
-void print_stuff(void);
-
 #endif

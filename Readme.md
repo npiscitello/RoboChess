@@ -27,4 +27,5 @@ chess engine locally impractical - we'll cross that bridge when we get to it. Th
 the Media Computer configuration seems to be hardwired to an RS232 chip on the board; we'll need to
 implement soft UART or just convert the RS232. I plan on leveraging the prebuilt UART interface; in
 addition to making the software simpler, it also allows the use of standard RS232/UART conversion
-equipment (instead of creating our own cables).
+equipment (instead of creating our own cables). Since the default serial settings aren't quite
+right, we're going to be building a custom image based off the Basic Computer for the FPGA.
