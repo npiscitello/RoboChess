@@ -13,6 +13,11 @@ int serial_read( unsigned char* data );
 
 /* write one byte to the UART send FIFO
  *  data: data to push onto the queue
+ *
+ *  returns: a code indicating the success of the operation
+ *      1   - operation completed successfully, space remaining in queue
+ *      0   - operation completed successfully, queue full
+ *      -1  - operation unsuccessful; queue is already full
  */
 void serial_write( unsigned char data );
 

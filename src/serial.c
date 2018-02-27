@@ -16,3 +16,15 @@
 #define REG_CTRL_READ_INT_ENABLE_OFFSET 0
 
 #define _BV(bit) (1 << (bit))
+
+int serial_read( unsigned char* data ) {
+  // blah
+  return -1;
+}
+
+int serial_write( unsigned char data ) {
+  if( (*REG_CTRL_BASE_ADDR >> REG_CTRL_WSPACE_OFFSET) != 0 ) {
+    // we can write!
+  }
+  return -1;
+}
