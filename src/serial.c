@@ -26,6 +26,18 @@ volatile uint32_t* REG_CTRL_PTR = (uint32_t*) REG_CTRL_BASE_ADDR;
 void serial_init() {
   // we don't want interrupts
   *REG_DATA_PTR &= ~(_BV(REG_CTRL_WRITE_INT_ENABLE_OFFSET) | _BV(REG_CTRL_READ_INT_ENABLE_OFFSET));
+  return;
+}
+
+void write_command( uint8_t opcode, uint8_t* data, uint8_t data_len ) {
+  // there's probably a better way to make sure data sends; if I need to I'll figure it out
+  // try to write the opcode until it works
+  while( serial_write(opcode) < 0 ) {};
+  // now send the data, trying until each byte works
+  for( int i = 0; i < data_len; i++ ) {
+    while( serial_write(*(data + i)) < 0 ) {}
+  }
+  return;
 }
 
 int serial_read( uint8_t* data ) {

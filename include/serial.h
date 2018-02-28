@@ -7,6 +7,11 @@
  */
 void serial_init();
 
+/* send a command to the Roomba
+ *
+ */
+void write_command( uint8_t opcode, uint8_t* data, uint8_t data_len );
+
 /* read one byte from the UART receive FIFO
  *  data: address at which to place the read data
  *
