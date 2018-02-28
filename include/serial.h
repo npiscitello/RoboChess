@@ -1,6 +1,8 @@
 #ifndef SERIAL_H
 #define SERIAL_H
 
+#include <stdint.h>
+
 /* read one byte from the UART receive FIFO
  *  data: address at which to place the read data
  *
@@ -9,7 +11,7 @@
  *      0   - operation completed successfully, queue empty
  *      -1  - operation unsuccessful; queue is already empty
  */
-int serial_read( unsigned char* data );
+int serial_read( uint8_t* data );
 
 /* write one byte to the UART send FIFO
  *  data: data to push onto the queue
@@ -19,6 +21,6 @@ int serial_read( unsigned char* data );
  *      0   - operation completed successfully, queue full
  *      -1  - operation unsuccessful; queue is already full
  */
-void serial_write( unsigned char data );
+int serial_write( uint8_t data );
 
 #endif
