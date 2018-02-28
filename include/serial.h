@@ -3,6 +3,10 @@
 
 #include <stdint.h>
 
+/* set up the serial interface
+ */
+void serial_init();
+
 /* read one byte from the UART receive FIFO
  *  data: address at which to place the read data
  *

@@ -19,12 +19,30 @@
 
 // makes the registers easy to use; we don't have to manually cast them every time
 // these could probably be real macros, buuuut something something premature optimization
+// thanks to the avrgcc toolchain for showing me how MMIO works!
 volatile uint32_t* REG_DATA_PTR = (uint32_t*) REG_DATA_BASE_ADDR;
 volatile uint32_t* REG_CTRL_PTR = (uint32_t*) REG_CTRL_BASE_ADDR;
 
+void serial_init() {
+  // we don't want interrupts
+  *REG_DATA_PTR &= ~(_BV(REG_CTRL_WRITE_INT_ENABLE_OFFSET) | _BV(REG_CTRL_READ_INT_ENABLE_OFFSET));
+}
+
 int serial_read( uint8_t* data ) {
-  // blah
-  return -1;
+  // cache the register
+  uint32_t regval = *REG_DATA_PTR;
+  // is there data available?
+  if( regval & _BV(REG_DATA_RVALID_OFFSET) ) {
+    *data = (uint8_t)(regval >> REG_DATA_DATA_OFFSET);
+    // is there data left?
+    if( (uint16_t)(regval >> REG_DATA_RAVAIL_OFFSET) == 0 ) {
+      return 0;
+    } else {
+      return 1;
+    }
+  } else {
+    return -1;
+  }
 }
 
 int serial_write( uint8_t data ) {
@@ -34,7 +52,6 @@ int serial_write( uint8_t data ) {
   } else {
     return -1;
   }
-
   // we wrote; is there still space?
   if( (*REG_CTRL_PTR >> REG_CTRL_WSPACE_OFFSET) > 0 ) {
     return 1;
