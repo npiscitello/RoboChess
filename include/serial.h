@@ -43,7 +43,7 @@ enum command {
   QUERY_SENSOR        = 142, // <1> request a sensor data packet
   QUERY_LIST          = 149, // <(# packets)+1> request multiple sensor packets in specified order
   STREAM              = 148, // <(# packets)+1> request sensor data to be sent every 15ms
-  CTRL_STREAM         = 150, // <1> pause/resume stream without clearing request
+  CTRL_STREAM         = 150  // <1> pause/resume stream without clearing request
 };
 
 enum sensor {
@@ -62,25 +62,53 @@ enum sensor {
   GROUP_107           = 107, // <9> packets 54-58
 
   // Individual Packets //
-  BUMP_WHEEL_DROP     = 7,   // <1> bitmask for wheel drop sensors and bumpers
-  CLIFF_LEFT          = 9,   // <1> left side cliff sensor, binary version of ID28
-  CLIFF_FRONT_LEFT    = 10,  // <1> front left cliff sensor, binary version of ID29
-  CLIFF_FRONT_RIGHT   = 11,  // <1> front right cliff sensor, binary version of ID30
-  CLIFF_RIGHT         = 12,  // <1> right side cliff sensor, binary version of ID31
-  VIRTUAL_WALL        = 13,  // <1> state of the virtual wall detector
-  WHEEL_OVERCURRENT   = 14,  // <1> motor overcurrent sensors (no sensor for main vacuum)
-  DIRT_DETECT         = 15,  // <1> level of the dirt detect sensor
-  UNUSED_BYTE         = 16,  // <1> always 0, sent after ID15 when request is 0, 1, or 6
-  IR_CHAR_OMNI        = 17,  // <1> IR code being received; 0 means nothing is being received
-  IR_CHAR_LEFT        = 52,  // <1> IR code being received on the left
-  IR_CHAR_RIGHT       = 53,  // <1> IR code being received on the right
-  BUTTONS_SENSOR      = 18,  // <1> state of the buttons on the top of the robot
-  DISTANCE            = 19,  // <2> distance traveled since this packet was last requested, mm
-  ANGLE               = 20,  // <2> angle rotated since this packet was last requested, degrees
-  CHARGING            = 21,  // <1> charging state
-  BAT_VOLTAGE         = 22,  // <2> voltage of the internal battery, mV
-  BAT_CURRENT         = 23,  // <2> current flowing out of (negative) or into (positive) the battery
-  BAT_TEMPERATURE     = 24,  // <1> battery temperature, Celsius
+  BUMP_WHEEL_DROP       = 7,   // <1> bitmask for wheel drop sensors and bumpers
+  CLIFF_LEFT            = 9,   // <1> left side cliff sensor, binary version of ID28
+  CLIFF_FRONT_LEFT      = 10,  // <1> front left cliff sensor, binary version of ID29
+  CLIFF_FRONT_RIGHT     = 11,  // <1> front right cliff sensor, binary version of ID30
+  CLIFF_RIGHT           = 12,  // <1> right side cliff sensor, binary version of ID31
+  VIRTUAL_WALL          = 13,  // <1> state of the virtual wall detector
+  WHEEL_OVERCURRENT     = 14,  // <1> motor overcurrent sensors (no sensor for main vacuum)
+  DIRT_DETECT           = 15,  // <1> level of the dirt detect sensor
+  UNUSED_BYTE           = 16,  // <1> always 0, sent after ID15 when request is 0, 1, or 6
+  IR_CHAR_OMNI          = 17,  // <1> IR code being received; 0 means nothing is being received
+  IR_CHAR_LEFT          = 52,  // <1> IR code being received on the left
+  IR_CHAR_RIGHT         = 53,  // <1> IR code being received on the right
+  BUTTONS_SENSOR        = 18,  // <1> state of the buttons on the top of the robot
+  DISTANCE              = 19,  // <2> distance traveled since this packet was last requested, mm
+  ANGLE                 = 20,  // <2> angle rotated since this packet was last requested, degrees
+  CHARGING              = 21,  // <1> charging state
+  BAT_VOLTAGE           = 22,  // <2> voltage of the internal battery, mV
+  BAT_CURRENT           = 23,  // <2> current flowing out of (-) or into (+) the battery
+  BAT_TEMPERATURE       = 24,  // <1> battery temperature, Celsius
+  BAT_CHARGE            = 25,  // <2> estimated mAh capacity
+  CLIFF_LEFT_SIG        = 28,  // <2> strength of left side cliff sensor
+  CLIFF_FRONT_LEFT_SIG  = 29,  // <2> strength of front left cliff sensor
+  CLIFF_FRONT_RIGHT_SIG = 30,  // <2> strength of front right cliff sensor
+  CLIFF_RIGHT_SIG       = 31,  // <2> strength of right side cliff sensor
+  CHARGING_AVAIL        = 34,  // <1> information about charging status
+  OI_MODE               = 35,  // <1> which mode the Roomba is in
+  SONG_NUMBER           = 36,  // <1> which song is currently selected
+  SONG_PLAYING          = 37,  // <1> returns whether a song is playing or not
+  NUM_STREAM_PACKETS    = 38,  // <1> how many packets are being streamed
+  REQUESTED_VELO        = 39,  // <2> velocity most recently requested by a drive command
+  REQUESTED_RADIUS      = 40,  // <2> radius most recently requested - broken before FW3.3.0
+  REQUESTED_VELO_RIGHT  = 41,  // <2> right wheel velocity most recently requested
+  REQUESTED_VELO_LEFT   = 42,  // <2> left wheel velocity most recently requested
+  ENCODER_COUNT_LEFT    = 43,  // <2> cumulative enocder count, left wheel
+  ENCODER_COUNT_RIGHT   = 44,  // <2> cumulative encoder count, right wheel
+  BUMP                  = 45,  // <1> light bumper bitmask, binary version of ID46-51
+  BUMP_LEFT_SIG         = 46,  // <2> left light bumper strength
+  BUMP_FRONT_LEFT_SIG   = 47,  // <2> front left light bumper strength
+  BUMP_CENTER_LEFT_SIG  = 48,  // <2> center left light bumper strength
+  BUMP_CENTER_RIGHT_SIG = 49,  // <2> center right light bumper strength
+  BUMP_FRONT_RIGHT_SIG  = 50,  // <2> front right light bumper strength
+  BUMP_RIGHT_SIG        = 51,  // <2> right light bumper strength
+  MOTOR_CURRENT_LEFT    = 54,  // <2> the current being drawn by the left motor
+  MOTOR_CURRENT_RIGHT   = 55,  // <2> the current being drawn by the right motor
+  MOTOR_CURRENT_MAIN    = 56,  // <2> the current being drawn by the main brush motor
+  MOTOR_CURRENT_SIDE    = 57,  // <2> the current being drawn by the side brush
+  STASIS                = 58   // <1> status of the stasis sensor
 };
 
 /* set up the serial interface
