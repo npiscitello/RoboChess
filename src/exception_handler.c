@@ -1,4 +1,5 @@
 #include "nios2_ctrl_reg_macros.h"
+#include "nios2_address_map.h"
 
 /* function prototypes */
 void interrupt_handler(void);
@@ -134,5 +135,19 @@ void interrupt_handler(void)
 		interval_timer_isr( );
 	}
 	// else, ignore the interrupt
+	return;
+}
+
+/*****************************************************************************
+ * Interval timer interrupt service routine
+ *                                                                          
+******************************************************************************/
+void interval_timer_isr( )
+{
+	volatile int * interval_timer_ptr = (int *) INTERVAL_TIMER_STATUS;
+	*(interval_timer_ptr) = 0; 				// Clear the interrupt
+
+  //*((int*)INTERVAL_TIMER_STATUS) = 0;
+
 	return;
 }

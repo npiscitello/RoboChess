@@ -5,6 +5,7 @@
 struct location {
   float x;
   float y;
+  // compass directions - 0 is N, 90 is E, etc.
   float head;
 };
 typedef struct location location_t;
