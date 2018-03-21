@@ -68,7 +68,7 @@ int rotate_to_heading( location_t loc ) {
   // circumference) the wheels must cover (clockwise positive) and the speed at which they will spin
   // The calculation is done in fp then converted to a 32 bit unsigned int for the timer function
   // in milliseconds
-  uint32_t travel_time = (uint32_t)round( ((fabs(diff.head) / 360.0) * (3.14 * PHYS_WHEEL_DIAMETER)) / (SPEED_ROTATE / 1000.0) );
+  uint32_t travel_time = (uint32_t)roundf( ((fabs(diff.head) / 360.0) * (3.14 * PHYS_WHEEL_DIAMETER)) / (SPEED_ROTATE / 1000.0) );
   //float test = 50.5;
   //uint32_t travel_time = (uint32_t)roundf( ((fabs(test) / 360.0) * (3.14 * PHYS_WHEEL_DIAMETER)) / (SPEED_ROTATE / 1000.0) );
 
