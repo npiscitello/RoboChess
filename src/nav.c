@@ -6,6 +6,7 @@
 #include "nav.h"
 #include "nios2_address_map.h"
 #include "serial.h"
+#include "timer.h"
 
 /* landmark info - since the OCI works in mm, we will too
  * By cross referencing these with the current location and knowledge of the Roomba's geometry, we
@@ -46,9 +47,6 @@
 // in case we need to switch from degrees
 #define HALF_CIRCLE 180
 
-// in Hz
-#define CPU_FREQ 50000000
-
 // current location of the robot - assumes it starts centered in the bottom-left cell facing North
 // absolute (0,0) of the board is the bottom left corner, with headings like a compass
 location_t current_location = {BOARD_CELL_SIZE_X/2, BOARD_CELL_SIZE_Y/2, 0};
@@ -58,6 +56,7 @@ location_t current_location = {BOARD_CELL_SIZE_X/2, BOARD_CELL_SIZE_Y/2, 0};
 /* rotate the robot to a specific heading
  */
 int rotate_to_heading( location_t loc ) {
+  // compiler doesn't like struct members...
   location_t diff;
   diff.head = loc.head - current_location.head;
   // always turn the shortest direction
@@ -67,10 +66,11 @@ int rotate_to_heading( location_t loc ) {
 
   // how long the roomba must spin at the specified speed, calculated using the linear distance (over
   // circumference) the wheels must cover (clockwise positive) and the speed at which they will spin
-  // The calculation is done in fp then converted to a 32 bit unsigned int for the timer
-  uint32_t travel_time = (uint32_t)round( ((fabs(diff.head) / 360.0) * (3.14 * PHYS_WHEEL_DIAMETER)) / (SPEED_ROTATE) );
-  *(INTERVAL_TIMER_START_LO) = travel_time & 0xFFFF;
-  *(INTERVAL_TIMER_START_HI) = (travel_time >> 16) & 0xFFFF;
+  // The calculation is done in fp then converted to a 32 bit unsigned int for the timer function
+  // in milliseconds
+  uint32_t travel_time = (uint32_t)round( ((fabs(diff.head) / 360.0) * (3.14 * PHYS_WHEEL_DIAMETER)) / (SPEED_ROTATE / 1000.0) );
+  //float test = 50.5;
+  //uint32_t travel_time = (uint32_t)roundf( ((fabs(test) / 360.0) * (3.14 * PHYS_WHEEL_DIAMETER)) / (SPEED_ROTATE / 1000.0) );
 
   // send move command
   uint8_t data_packet[4];
@@ -86,11 +86,8 @@ int rotate_to_heading( location_t loc ) {
   }
   write_command(DRIVE, data_packet, 4);
 
-  // STOP = 0, START = 1, CONT = 0, ITR = 1
-  // start the countdown, do not repeat
-  *(INTERVAL_TIMER_CONTROL) = 0x0005;
-  // poll the timer until done; this could be interrupt-driven but... that'll come later if needed
-  while ( *(INTERVAL_TIMER_STATUS) & 0x0001 ) {}
+  // wait for the robot to turn around
+  delay_ms(travel_time);
 
   // send stop command (drive at 0 speed)
   data_packet[0] = 0x00; data_packet[1] = 0x00;

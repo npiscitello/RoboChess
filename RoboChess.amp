@@ -14,10 +14,10 @@
             <source_file filepath="true">src/nav.c</source_file>
             <source_file filepath="true">src/serial.c</source_file>
             <source_file filepath="true">src/exception_handler.c</source_file>
-            <source_file filepath="true">src/interval_timer_ISR.c</source_file>
+            <source_file filepath="true">src/timer.c</source_file>
         </source_files>
         <options>
-            <compiler_flags>-g -O1 -ffunction-sections -fverbose-asm -fno-inline -mno-cache-volatile -I"C:/Users/piscitellon/Documents/Spring2018/ELEC2850-02_microcontrollers_c/roomba/RoboChess/include" -std=gnu99</compiler_flags>
+            <compiler_flags>-g -O1 -ffunction-sections -fverbose-asm -fno-inline -mno-cache-volatile -I"C:/Users/piscitellon/Documents/Spring2018/ELEC2850-02_microcontrollers_c/roomba/RoboChess/include" -std=gnu99 -lmath</compiler_flags>
             <emulate_unimpl_instructions>true</emulate_unimpl_instructions>
             <use_small_c_library>false</use_small_c_library>
         </options>

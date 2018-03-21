@@ -19,4 +19,13 @@ typedef struct location location_t;
  */
 int go_to_location( location_t loc );
 
+/* blocking - rotate the roomba in place to the specified heading
+ *  loc: defines the heading to which the robot is rotating
+ *
+ *  returns: a code indicating the success of the operation
+ *    1 - the robot could not rotate to the heading
+ *    0 - the heading has been reached
+ */
+int rotate_to_heading( location_t loc );
+
 #endif
