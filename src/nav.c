@@ -98,15 +98,28 @@ int rotate_to_heading( location_t loc ) {
 
 
 
-/* the strategy here is to move like a cartesian robot, finding the x position then going to the y.
- * This is certainly not the most efficient way to do this, but its a good start
+/* the robot will move in a straight line to the destination
  */
 int go_to_location( location_t loc ) {
-  // calculate a location diff
+  // calculate a location diff, making sure we're not going off the board
   location_t diff;
-  diff.x = loc.x - current_location.x;
-  diff.y = loc.y - current_location.y;
+  if( loc.x < PHYS_MAX_DIAMETER / 2 ) {
+    diff.x = loc.x - current_location.x;
+  } else if( loc.x > BOARD_MAX_X - (PHYS_MAX_DIAMETER / 2) ) {
+    diff.x = (BOARD_MAX_X - (PHYS_MAX_DIAMETER / 2)) - current_location.x;
+  } else {
+    diff.x = (PHYS_MAX_DIAMETER / 2) - current_location.x;
+  }
+  if( loc.y < PHYS_MAX_DIAMETER / 2 ) {
+    diff.y = loc.y - current_location.y;
+  } else if( loc.y > BOARD_MAX_Y - (PHYS_MAX_DIAMETER / 2) ) {
+    diff.y = (BOARD_MAX_Y - (PHYS_MAX_DIAMETER / 2)) - current_location.y;
+  } else {
+    diff.y = (PHYS_MAX_DIAMETER / 2) - current_location.y;
+  }
 
   // move in X
+
+
   return(0);
 }
