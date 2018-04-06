@@ -17,6 +17,7 @@ void delay_ms(uint32_t time) {
   *(INTERVAL_TIMER_CONTROL) = 0x0005;
 
   // poll the timer until done; this could be interrupt-driven but... that'll come later if needed
-  while ( *(INTERVAL_TIMER_STATUS) & 0x0001 ) {}
-
+  volatile int* reg = INTERVAL_TIMER_STATUS;
+  while( *reg == 2 ) {}
+  *reg &= 0xFFFE;
 }

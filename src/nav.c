@@ -120,6 +120,5 @@ int go_to_location( location_t loc ) {
 
   // move in X
 
-
   return(0);
 }

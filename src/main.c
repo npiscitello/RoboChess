@@ -13,14 +13,14 @@ int main() {
   location_t rotate;
   while( 1 ) {
     rotate.head = 180;
-    
     rotate_to_heading(rotate);
 
-    // convert seconds to milliseconds
     delay_ms(DELAY);
 
     rotate.head = 0;
     rotate_to_heading(rotate);
+
+    delay_ms(DELAY);
   }
 
   return 0;
