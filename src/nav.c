@@ -43,6 +43,7 @@
 #define SPEED_TRANSLATE 200
 #define ROTATE_CLOCKWISE -1
 #define ROTATE_COUNTERCLOCKWISE 1
+#define DRIVE_STRAIGHT 0x8000
 
 // in case we need to switch from degrees
 #define HALF_CIRCLE 180
@@ -78,11 +79,11 @@ int rotate_to_heading( location_t loc ) {
   data_packet[1] = (int16_t)SPEED_ROTATE & 0xFF;
   // positive angle = clockwise, negative = counterclockwise
   if( diff.head > 0 ) {
-    data_packet[0] = ((int16_t)ROTATE_CLOCKWISE >> 8) & 0xFF;
-    data_packet[1] = (int16_t)ROTATE_CLOCKWISE & 0xFF;
+    data_packet[2] = ((int16_t)ROTATE_CLOCKWISE >> 8) & 0xFF;
+    data_packet[3] = (int16_t)ROTATE_CLOCKWISE & 0xFF;
   } else {
-    data_packet[0] = ((int16_t)ROTATE_COUNTERCLOCKWISE >> 8) & 0xFF;
-    data_packet[1] = (int16_t)ROTATE_COUNTERCLOCKWISE & 0xFF;
+    data_packet[2] = ((int16_t)ROTATE_COUNTERCLOCKWISE >> 8) & 0xFF;
+    data_packet[3] = (int16_t)ROTATE_COUNTERCLOCKWISE & 0xFF;
   }
   write_command(DRIVE, data_packet, 4);
 
@@ -110,6 +111,7 @@ int go_to_location( location_t loc ) {
   } else {
     diff.x = (PHYS_MAX_DIAMETER / 2) - current_location.x;
   }
+
   if( loc.y < PHYS_MAX_DIAMETER / 2 ) {
     diff.y = loc.y - current_location.y;
   } else if( loc.y > BOARD_MAX_Y - (PHYS_MAX_DIAMETER / 2) ) {
@@ -118,7 +120,28 @@ int go_to_location( location_t loc ) {
     diff.y = (PHYS_MAX_DIAMETER / 2) - current_location.y;
   }
 
-  // move in X
+  // calculate dead reckoning data
+  int heading = arctan(diff.y / diff.x);
+  int distance = sqrt(pow(diff.x, 2) + pow(diff.y, 2));
+
+  // move to point
+  location_t rotate = {0, 0, heading};
+  rotate_to_heading(rotate);
+
+  // start moving
+  uint8_t data_packet[4];
+  data_packet[0] = ((int16_t)SPEED_TRANSLATE >> 8) & 0xFF;
+  data_packet[1] = (int16_t)SPEED_TRANSLATE & 0xFF;
+  data_packet[2] = ((int16_t)DRIVE_STRAIGHT >> 8) & 0xFF;
+  data_packet[3] = (int16_t)DRIVE_STRAIGHT & 0xFF;
+  write_command(DRIVE, data_packet, 4);
+
+  uint32_t travel_time = (uint32_t)((distance / 360.0) * (3.14 * PHYS_WHEEL_DIAMETER)) / (SPEED_TRANSLATE / 1000.0);
+  delay_ms(travel_time);
+
+  // send stop command (drive at 0 speed)
+  data_packet[0] = 0x00; data_packet[1] = 0x00;
+  write_command(DRIVE, data_packet, 4);
 
   return(0);
 }
