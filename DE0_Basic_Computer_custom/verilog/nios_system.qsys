@@ -148,7 +148,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "1";
+         value = "0";
          type = "boolean";
       }
    }
@@ -178,35 +178,6 @@
          type = "long";
       }
    }
-   element Pushbuttons.avalon_parallel_port_slave
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-   }
-   element Slider_switches.avalon_parallel_port_slave
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "268435520";
-         type = "long";
-      }
-   }
-   element Expansion_JP1.avalon_parallel_port_slave
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-   }
    element HEX3_HEX0.avalon_parallel_port_slave
    {
       datum _lockedAddress
@@ -220,7 +191,7 @@
          type = "long";
       }
    }
-   element Expansion_JP2.avalon_parallel_port_slave
+   element Expansion_JP1.avalon_parallel_port_slave
    {
       datum _lockedAddress
       {
@@ -241,6 +212,35 @@
          type = "long";
       }
    }
+   element Pushbuttons.avalon_parallel_port_slave
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+   }
+   element Expansion_JP2.avalon_parallel_port_slave
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+   }
+   element Slider_switches.avalon_parallel_port_slave
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "268435520";
+         type = "long";
+      }
+   }
    element Serial_port.avalon_rs232_slave
    {
       datum _lockedAddress
@@ -254,14 +254,6 @@
          type = "long";
       }
    }
-   element clk.clk
-   {
-      datum clock_domain
-      {
-         value = "clk";
-         type = "String";
-      }
-   }
    element clk
    {
       datum _sortIndex
@@ -269,10 +261,13 @@
          value = "5";
          type = "int";
       }
-      datum sopceditor_expanded
+   }
+   element clk.clk
+   {
+      datum clock_domain
       {
-         value = "0";
-         type = "boolean";
+         value = "clk";
+         type = "String";
       }
    }
    element sysid.control_slave
@@ -309,19 +304,6 @@
          type = "long";
       }
    }
-   element Interval_timer.s1
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "268443648";
-         type = "long";
-      }
-   }
    element Onchip_memory.s1
    {
       datum _lockedAddress
@@ -335,7 +317,7 @@
          type = "long";
       }
    }
-   element Onchip_memory_SRAM.s1
+   element Interval_timer.s1
    {
       datum _lockedAddress
       {
@@ -344,7 +326,7 @@
       }
       datum baseAddress
       {
-         value = "134217728";
+         value = "268443648";
          type = "long";
       }
    }
@@ -358,6 +340,19 @@
       datum baseAddress
       {
          value = "0";
+         type = "long";
+      }
+   }
+   element Onchip_memory_SRAM.s1
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "134217728";
          type = "long";
       }
    }
@@ -411,11 +406,6 @@
       {
          value = "1";
          type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
       }
    }
 }

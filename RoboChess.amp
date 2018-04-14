@@ -2,8 +2,10 @@
 <altera_monitor_program_project version="1.0">
     <architecture>Nios II</architecture>
     <system>
-        <sample_system_title>DE0 Basic Computer</sample_system_title>
-        <cable>null</cable>
+      <system_info filepath="true">DE0_Basic_Computer_Custom/verilog/nios_system.sopcinfo</system_info>
+        <system_sof filepath="true">DE0_Basic_Computer_Custom/verilog/DE0_Basic_Computer.sof</system_sof>
+        <system_jdi filepath="true"/>
+        <cable>USB-Blaster [USB-0]</cable>
         <processor>cpu</processor>
         <terminal>JTAG_UART</terminal>
     </system>
